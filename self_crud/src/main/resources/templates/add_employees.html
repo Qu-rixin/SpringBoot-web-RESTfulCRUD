@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/addemp}" method="post">
+        <input type="hidden" name="_method" value="put" th:if="${employee!=null}"/>
+        <input type="hidden" name="id" th:if="${employee!=null}" th:value="${employee.id}">
+        <div>
+            <label>LastName</label>
+            <input name="name" type="text" placeholder="tim" th:value="${employee!=null}?${employee.name}">
+        </div>
+        <div>
+            <label>Email</label>
+            <input name="email" type="email" placeholder="tim@163.com" th:value="${employee!=null}?${employee.email}">
+        </div>
+        <div>
+            <label>Gender</label><br/>
+            <div>
+                <input type="radio" name="gender" value="1" th:checked="${employee!=null}?${employee.gender==1}">
+                <label>男</label>
+            </div>
+            <div>
+                <input type="radio" name="gender" value="0" th:checked="${employee!=null}?${employee.gender==0}">
+                <label>女</label>
+            </div>
+        </div>
+        <div>
+            <label>department</label>
+            <select name="department.id">
+                <option th:selected="${employee!=null}?${dept.id == employee.department.id}" th:value="${dept.id}" th:each="dept:${departments}" th:text="${dept.departmentName}">1</option>
+            </select>
+        </div>
+        <div>
+            <label>Birthday</label>
+            <input name="birthday" type="text" placeholder="2019/9/14" th:value="${employee!=null}?${#dates.format(employee.birthday, 'yyyy-MM-dd HH:mm')}">
+        </div>
+        <button type="submit" th:text="${employee!=null}?'修改':'添加'">添加</button>
+    </form>
+</div>
+</body>
+</html>
