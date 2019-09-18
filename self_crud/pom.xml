@@ -28,6 +28,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--引入其他的Servlet容器-->
+        <!--<dependency>-->
+            <!--<groupId>spring-boot-starter-jetty</groupId>-->
+            <!--<artifactId>org.springframework.boot</artifactId>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

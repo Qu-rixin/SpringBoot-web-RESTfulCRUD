@@ -3,6 +3,7 @@ package com.qrx.self_crud.config;
 
 import com.qrx.self_crud.component.LoginHandlerInterceptor;
 import com.qrx.self_crud.component.MyLocaleResolver;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
